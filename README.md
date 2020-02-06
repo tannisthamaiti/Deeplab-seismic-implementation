@@ -27,4 +27,18 @@ tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder co
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder and continue following the analytics vidhya blog. 
+!python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
+  --atrous_rates=6 \
+  --atrous_rates=12 \
+  --atrous_rates=18 \
+  --output_stride=16 \
+  --decoder_output_stride=4 \
+  --train_crop_size=513,513 \
+  --train_batch_size=2 \
+  --training_number_of_steps=1000 \
+  --fine_tune_batch_norm=true \
+  --train_logdir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/CustomDataset/train" \
+  --dataset="seismic" \
+  --dataset_dir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/tfrecord" \
+  --tf_initial_checkpoint="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/pascal_vog_seg/init_models/deeplabv3_pascal_train_aug/model.ckpt" 
 
