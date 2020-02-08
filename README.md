@@ -53,8 +53,8 @@ After the tf record, navigate to models-research-deprecated-segmentation_on_data
   --train_batch_size=2 \
   --training_number_of_steps=1000 \
   --fine_tune_batch_norm=true \
-  --train_logdir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/CustomDataset/train" \
+  --train_logdir=" path/train" \
   --dataset="seismic" \
-  --dataset_dir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/tfrecord" \
-  --tf_initial_checkpoint="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/pascal_vog_seg/init_models/deeplabv3_pascal_train_aug/model.ckpt" 
+  --dataset_dir="path/tfrecord " 
+  --model_checkpoint = "path/model.ckpt" 
 
