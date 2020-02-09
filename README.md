@@ -8,8 +8,8 @@ The folder containg the images. The hierarchy is as follows:
 ---- imageset|JPEGImages|Segmentationclass
 
 
-Download pre build images from this link to CustomDataset folder. 
-Download pre build tfrecords from this link to tfrecords folder. 
+Download pre build images from this link to CustomDataset folder https://drive.google.com/drive/u/1/folders/1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn
+Download pre build tfrecords from this link to tfrecords folder https://drive.google.com/open?id=1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS
 --Imageset
 --- train.txt| trainval.txt|value.txt
 The .txt files consists of list of images in train / value list.
