@@ -2,17 +2,24 @@
 
 The folder containg the images. The hierarchy is as follows:
 
-
---datasets
-----Customdataset|tfrecords
----- imageset|JPEGImages|Segmentationclass
-
-
+```bash
+dataset
+├── tfrecords
+├── Customdataset
+│   ├── Imageset
+        ├── train.txt
+        ├── trainval.txt
+        ├── val.txt       
+│   ├── JPEGImages
+│   ├── SegmentationClass
+│   └── test2_seismic.npy
+└── train
+    ├── train_labels.npy
+    └── train_seismic.npy
+```
 Download pre build images from this link to CustomDataset folder https://drive.google.com/drive/u/1/folders/1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn
 Download pre build tfrecords from this link to tfrecords folder https://drive.google.com/open?id=1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS
---Imageset
---- train.txt| trainval.txt|value.txt
-The .txt files consists of list of images in train / value list.
+The .txt files consists of list of images in train / validation set.
 
 _________________________________________
 
@@ -43,6 +50,7 @@ tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder co
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
+#### train models 
 !python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
   --atrous_rates=6 \
   --atrous_rates=12 \
