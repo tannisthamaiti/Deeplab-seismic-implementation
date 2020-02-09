@@ -7,15 +7,12 @@ dataset
 ├── tfrecords
 ├── Customdataset
 │   ├── Imageset
-        ├── train.txt
-        ├── trainval.txt
-        ├── val.txt       
+|   |   ├── train.txt
+|   |   ├── trainval.txt
+|   |   ├── val.txt       
 │   ├── JPEGImages
 │   ├── SegmentationClass
 │   └── test2_seismic.npy
-└── train
-    ├── train_labels.npy
-    └── train_seismic.npy
 ```
 Download pre build images from this link to CustomDataset folder https://drive.google.com/drive/u/1/folders/1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn
 Download pre build tfrecords from this link to tfrecords folder https://drive.google.com/open?id=1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS
