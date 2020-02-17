@@ -3,8 +3,9 @@
 The folder containg the images. The hierarchy is as follows:
 
 ```bash
-dataset
+datasets
 ├── tfrecords
+├── tfrecords_test
 ├── Customdataset
 │   ├── Imageset
 |   |   ├── train.txt
@@ -12,7 +13,7 @@ dataset
 |   |   ├── val.txt       
 │   ├── JPEGImages
 │   ├── SegmentationClass
-│   └── test2_seismic.npy
+├── model_checkpoints  
 ```
 #### Download train/val Image dataset
 Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data directly to `CustomDataset`. Make sure you have the following folder structure in the `CustomDataset` directory after you unzip the file: 
