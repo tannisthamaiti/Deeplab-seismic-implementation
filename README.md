@@ -19,7 +19,7 @@ datasets
 Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data directly to `CustomDataset`. Make sure you have the following folder structure in the `CustomDataset` directory after you unzip the file: 
 
 #### Download test Image dataset
-Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
+Click [here](https://drive.google.com/drive/folders/1VPDQNlJdJzMgJA3IA6aiWufruSEPRm3B?usp=sharing) to download the Image data.
 
 #### Download train/val tfrecords
 Click [here](https://drive.google.com/drive/folders/1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS?usp=sharing) to download the Image data.
