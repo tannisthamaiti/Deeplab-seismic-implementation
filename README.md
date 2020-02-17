@@ -14,21 +14,21 @@ dataset
 │   ├── SegmentationClass
 │   └── test2_seismic.npy
 ```
-### Download train/val Image dataset
+#### Download train/val Image dataset
 Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data directly to `CustomDataset`. Make sure you have the following folder structure in the `CustomDataset` directory after you unzip the file: 
 
-### Download test Image dataset
+#### Download test Image dataset
 Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
 
-### Download train/val tfrecords
-Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
+#### Download train/val tfrecords
+Click [here](https://drive.google.com/drive/folders/1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS?usp=sharing) to download the Image data.
 
-### Download test tfrecords
-Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
+#### Download test tfrecords
+Click [here](https://drive.google.com/drive/folders/1TyzFCwd6-d2jZZthG0TrqBT6h-KbatQo?usp=sharing) to download the Image data.
 
 _________________________________________
 
-#### Generate Images from .npy file.
+### Generate Images from .npy file.
 
 In deepkapha folder, there are two “.npy” files used for generating the “patch” images across cross-line. And the tensorflow-1 contains the deeplab folder inside the models-research-deeplab folder. 
 
@@ -55,7 +55,8 @@ tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder co
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
-#### train models 
+### train models 
+```bash
 !python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
   --atrous_rates=6 \
   --atrous_rates=12 \
@@ -70,4 +71,5 @@ After the tf record, navigate to models-research-deprecated-segmentation_on_data
   --dataset="seismic" \
   --dataset_dir="path/tfrecord " 
   --model_checkpoint = "path/model.ckpt" 
+  ```
 
