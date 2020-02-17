@@ -6,7 +6,7 @@ The folder containg the images. The hierarchy is as follows:
 datasets
 ├── tfrecords
 ├── tfrecords_test
-├── Customdataset
+├── CustomDataset
 │   ├── Imageset
 |   |   ├── train.txt
 |   |   ├── trainval.txt
