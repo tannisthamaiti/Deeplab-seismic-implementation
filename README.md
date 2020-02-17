@@ -57,6 +57,7 @@ tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SST
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
 ### Train models 
+Example google colab notebook is also provided `Deeplab-training-notebook.ipnyb`.
 ```bash
 !python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
   --atrous_rates=6 \
