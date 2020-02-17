@@ -56,7 +56,7 @@ tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder co
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
-### train models 
+### Train models 
 ```bash
 !python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
   --atrous_rates=6 \
