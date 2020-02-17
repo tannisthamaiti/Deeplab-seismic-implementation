@@ -1,6 +1,26 @@
 # Deeplab Seismic Implementation
 
-There are two folders named as - Deepkapha and tensorflow-1
+The folder containg the images. The hierarchy is as follows:
+
+```bash
+dataset
+├── tfrecords
+├── Customdataset
+│   ├── Imageset
+|   |   ├── train.txt
+|   |   ├── trainval.txt
+|   |   ├── val.txt       
+│   ├── JPEGImages
+│   ├── SegmentationClass
+│   └── test2_seismic.npy
+```
+Download pre build images from this link to CustomDataset folder https://drive.google.com/drive/u/1/folders/1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn
+Download pre build tfrecords from this link to tfrecords folder https://drive.google.com/open?id=1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS
+The .txt files consists of list of images in train / validation set.
+
+_________________________________________
+
+#### Generate Images from .npy file.
 
 In deepkapha folder, there are two “.npy” files used for generating the “patch” images across cross-line. And the tensorflow-1 contains the deeplab folder inside the models-research-deeplab folder. 
 
@@ -18,7 +38,7 @@ After the images have been generated, copy the images present inside the
     This means that at last your “datasets” folder will be having three files - “train.txt”, “trainval.txt” , “val.txt” inside the “ImageSets” folder. The “SegmentationClass” will have the labels corresponding to the ground-truth images and the “JPEGImages” will have the original images which will be a sum of image generated from train.txt, trainval.txt and val.txt.
 
 After this, you need to generate the tfrecord. For generating the tfrecord, navigate to the build_voc2012_data.py folder present inside the datasets folder. 
-
+#### Generate tfrecords. 
 Inside the  “build_voc2012_data.py” folder, specify the path as shown below and then run this python file. This will generate tfrecords file for the images.
 
 tf.app.flags.DEFINE_string('image_folder', './CustomDataset/JPEGImages', 'Folder containing images.')
@@ -26,7 +46,8 @@ tf.app.flags.DEFINE_string('semantic_segmentation_folder', './CustomDataset/Segm
 tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder containing lists for training and validation')
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
-After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder and continue following the analytics vidhya blog. 
+After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
+#### train models 
 !python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
   --atrous_rates=6 \
   --atrous_rates=12 \
@@ -37,8 +58,8 @@ After the tf record, navigate to models-research-deprecated-segmentation_on_data
   --train_batch_size=2 \
   --training_number_of_steps=1000 \
   --fine_tune_batch_norm=true \
-  --train_logdir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/CustomDataset/train" \
+  --train_logdir=" path/train" \
   --dataset="seismic" \
-  --dataset_dir="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/tfrecord" \
-  --tf_initial_checkpoint="/content/gdrive/My Drive/Tannistha Maiti/Deeplab-v3/deeplab/datasets/pascal_vog_seg/init_models/deeplabv3_pascal_train_aug/model.ckpt" 
+  --dataset_dir="path/tfrecord " 
+  --model_checkpoint = "path/model.ckpt" 
 
