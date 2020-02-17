@@ -28,7 +28,25 @@ Click [here](https://drive.google.com/drive/folders/1EFCPgG3Sv0emkQ6ydnOjZ9rdNIt
 Click [here](https://drive.google.com/drive/folders/1TyzFCwd6-d2jZZthG0TrqBT6h-KbatQo?usp=sharing) to download the Image data.
 
 _________________________________________
-
+### Train models 
+Example google colab notebook is also provided `Deeplab-training-notebook.ipnyb`.
+```bash
+!python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
+  --atrous_rates=6 \
+  --atrous_rates=12 \
+  --atrous_rates=18 \
+  --output_stride=16 \
+  --decoder_output_stride=4 \
+  --train_crop_size=513,513 \
+  --train_batch_size=2 \
+  --training_number_of_steps=1000 \
+  --fine_tune_batch_norm=true \
+  --train_logdir=" path/train" \
+  --dataset="seismic" \
+  --dataset_dir="path/tfrecord " 
+  --model_checkpoint = "path/model.ckpt" 
+  ```
+__________________________________________________
 ### Generate Images from .npy file.
 
 In deepkapha folder, there are two “.npy” files used for generating the “patch” images across cross-line. And the tensorflow-1 contains the deeplab folder inside the models-research-deeplab folder. 
@@ -56,22 +74,4 @@ tf.app.flags.DEFINE_string('list_folder','./CustomDataset/ImageSets/','Folder co
 tf.app.flags.DEFINE_string('output_dir','./tfrecord','Path to save converted SSTable of TensorFlow examples.')
 
 After the tf record, navigate to models-research-deprecated-segmentation_on_dataset.py folder
-### Train models 
-Example google colab notebook is also provided `Deeplab-training-notebook.ipnyb`.
-```bash
-!python train.py --logtostderr --train_split="train" --model_variant="xception_65" \
-  --atrous_rates=6 \
-  --atrous_rates=12 \
-  --atrous_rates=18 \
-  --output_stride=16 \
-  --decoder_output_stride=4 \
-  --train_crop_size=513,513 \
-  --train_batch_size=2 \
-  --training_number_of_steps=1000 \
-  --fine_tune_batch_norm=true \
-  --train_logdir=" path/train" \
-  --dataset="seismic" \
-  --dataset_dir="path/tfrecord " 
-  --model_checkpoint = "path/model.ckpt" 
-  ```
 
