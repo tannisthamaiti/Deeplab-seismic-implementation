@@ -14,9 +14,17 @@ dataset
 │   ├── SegmentationClass
 │   └── test2_seismic.npy
 ```
-Download pre build images from this link to CustomDataset folder https://drive.google.com/drive/u/1/folders/1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn
-Download pre build tfrecords from this link to tfrecords folder https://drive.google.com/open?id=1EFCPgG3Sv0emkQ6ydnOjZ9rdNItisuCS
-The .txt files consists of list of images in train / validation set.
+### Download train/val Image dataset
+Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data directly to `CustomDataset`. Make sure you have the following folder structure in the `CustomDataset` directory after you unzip the file: 
+
+### Download test Image dataset
+Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
+
+### Download train/val tfrecords
+Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
+
+### Download test tfrecords
+Click [here](https://drive.google.com/open?id=1hVgifRtqOD_a-J2fCzzJG4kyu-A2jBjn) to download the Image data.
 
 _________________________________________
 
