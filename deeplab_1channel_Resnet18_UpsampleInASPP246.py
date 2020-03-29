@@ -147,7 +147,7 @@ class ResNet(nn.Module):
             #self.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3,
             #                       bias=False)
             # convert to 1 channel 
-            self.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=1, padding=3,
+            self.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3,
                                bias=False)
         else:
             self.conv1 = nn.Sequential(
@@ -205,8 +205,18 @@ class ResNet(nn.Module):
         x = nn.Upsample(size, mode='bilinear', align_corners=True)(x)
         return x
 
+def resnet10(pretrained=False, **kwargs):
+    """Constructs a ResNet-10 model.
+
+    Args:
+        pretrained (bool): If True, returns a model pre-trained on ImageNet
+    """
+    model = ResNet(Bottleneck, [1, 1, 1, 1], **kwargs)
+    if pretrained:
+        model.load_state_dict(model_zoo.load_url(model_urls['resnet10']))
+    return model
 def resnet18(pretrained=False, **kwargs):
-    """Constructs a ResNet-18 model.
+    """Constructs a ResNet-10 model.
 
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
